@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="clust.js"></script>
+    <script src="cluster.js"></script>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        body,
+        html {
+            min-height: 100%;
+            margin: 0;
+            padding: 0;
+        }
+
+        .cluster-content {
+            height: 950px;
+        }
+
+        #test {
+            margin: 0;
+            padding: 0;
+            list-style: none;
+            text-align: center;
+        }
+
+        #test li {
+            height: 150px;
+            width: 150px;
+            outline: 1px solid;
+            display: inline-block;
+        }
+
+        #test li.compensator,
+        #test li.before,
+        #test li.after {
+            display: block;
+            height: 0;
+            width: 100%;
+            outline: none;
+        }
+    </style>
+</head>
+<body>
+    <ul id="test" tabindex="0" ></ul>
+    <div id="scrollArea" class="clusterize-scroll">
+        <ul id="contentArea" class="clusterize-content">
+            <li class="clusterize-no-data">Loading data…</li>
+        </ul>
+    </div>
+    <script>
+        var data = Array.apply(null, {length: 1443}).map(Number.call, Number),
+            custom,
+            clusterize;
+
+        custom = new Clusterize(
+            document.getElementById('test'), {
+            inRow: 5,
+            visible: 20,
+            size: 150
+        }, data);
+
+//        clusterize = new Clusterize({
+//            rows: data.map(function (text) { return `<li>${text}</li>`; }),
+//            scrollId: 'scrollArea',
+//            contentId: 'contentArea'
+//       });
+    </script>
+</body>
+</html>

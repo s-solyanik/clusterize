@@ -1,0 +1,19 @@
+
+
+.clusterize-scroll{
+    max-height: 1000px;
+    overflow: auto;
+}
+.clusterize-extra-row{
+    margin-top: 0 !important;
+    margin-bottom: 0 !important;
+}
+.clusterize-extra-row.clusterize-keep-parity{
+    display: none;
+}
+.clusterize-content{
+    outline: 0;
+}
+.clusterize-no-data td{
+    text-align: center;
+}
